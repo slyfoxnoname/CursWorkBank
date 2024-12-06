@@ -35,8 +35,6 @@
 		<Unit filename="Bank.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sorinput.txt" />
-		<Unit filename="soroutp" />
-		<Unit filename="soruotp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
