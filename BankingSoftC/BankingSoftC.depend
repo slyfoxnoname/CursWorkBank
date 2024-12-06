@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1733519228 source:c:\works_and_office\codeblock\banktask\bankingsoftc\bank.c
+	"Bank.h"
+	<string.h>
+	<time.h>
+
+1733515171 c:\works_and_office\codeblock\banktask\bankingsoftc\bank.h
+	<stdio.h>
+	<stdlib.h>
+
+1733518532 source:c:\works_and_office\codeblock\banktask\bankingsoftc\main.c
+	<stdio.h>
+	"Bank.h"
+	<locale.h>
+
+1733515350 source:c:\works_and_office\codeblock\banktask\bankingsoftc\main_test.c
+

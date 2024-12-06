@@ -15,7 +15,7 @@ void calculateProfit(const Deposit& deposit) {
 void saveToCSV(const string& filename, const vector<Client>& clients) {
     ofstream file(filename);
     for (const auto& client : clients) {
-        file << quoted(client.name) << ","
+        file << "Client name: " << quoted(client.name) << ","
              << client.balance << "\n";
         for (const auto& deposit : client.deposits) {
             file << quoted(deposit.type) << ","
@@ -50,7 +50,7 @@ void loadFromCSV(const string& filename, vector<Client>& clients) {
 void printBankState(const vector<Client>& clients) {
     for (const auto& client : clients) {
         client.displayClientInfo();
-        cout << "-----------------------------\n";
+        cout << "=============================\n";
     }
 }
 

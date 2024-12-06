@@ -29,11 +29,11 @@ public:
     }
 
     void displayClientInfo() const {
-        cout << "Клiєнт: " << name << "\nБаланс: " << balance << "\nВклади:\n";
+        cout << "\nКлiєнт: " << name << "\nБаланс: " << balance << "\n=== Вклад ===\n";
         for (const auto& deposit : deposits) {
-            cout << "Тип: " << deposit.type << ", Сума: " << deposit.amount
-                 << ", Процентна ставка: " << deposit.interest_rate
-                 << "%, Строк: " << deposit.duration << " рокiв\n";
+            cout << "\nТип: " << deposit.type << "\nСума: " << deposit.amount
+                 << "\nПроцентна ставка: " << deposit.interest_rate << "%"
+                 << "\nСтрок: " << deposit.duration << " рокiв\n\n";
         }
     }
 };

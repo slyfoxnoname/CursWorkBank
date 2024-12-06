@@ -1,0 +1,5 @@
+Client name: "Egor",5000
+"Cars",1000,3,16
+"Univers",2500,5,25
+Client name: "Ira",10000
+"Caffe",5000,5,5

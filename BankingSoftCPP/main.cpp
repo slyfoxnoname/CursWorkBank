@@ -17,6 +17,7 @@ int main() {
         cout << "Введiть iм'я файлу для завантаження: ";
         cin >> filename;
         loadFromCSV(filename, clients);
+         printBankState(clients);
     } else if (choice == 2) {
         int numClients;
         cout << "Введiть кiлькiсть клiєнтiв для додавання: ";
@@ -25,7 +26,7 @@ int main() {
         for (int i = 0; i < numClients; ++i) {
             string name;
             double balance;
-            cout << "Введiть iм'я клiєнта: ";
+            cout << "Введiть iм'я клiєнта без пробiлiв: ";
             cin >> name;
             cout << "Введiть баланс клiєнта: ";
             cin >> balance;
@@ -74,7 +75,7 @@ int main() {
     }
 
     // Відображення стану банку
-    cout << "\n=== Стан банку ===\n";
+    cout << "\n========= Стан банку =========\n";
     printBankState(clients);
 
     // Оновлення цін на цінні папери
@@ -97,9 +98,19 @@ int main() {
 
     // Збереження даних у файл
     string filename;
-    cout << "Введiть iм'я файлу для збереження даних: ";
-    cin >> filename;
-    saveToCSV(filename, clients);
+
+    int answer;
+    cout << "=============================\n";
+    cout << "\nХочете зберегти даннi у файл?\n" << "1.Так,зберегти у файл.\n" << "2. Нi, не зберiгати.\n" << "Введiть номер:";
+    cin >> answer;
+
+    if (answer == 1){
+        cout << "Введiть iм'я файлу для збереження даних: ";
+        cin >> filename;
+        saveToCSV(filename, clients);
+    } else if (answer == 2){
+        exit(1);
+        }
 
     return 0;
 }

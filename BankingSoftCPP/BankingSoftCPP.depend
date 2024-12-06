@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1733512444 source:c:\works_and_office\codeblock\banktask\bankingsoftcpp\bank.cpp
+	"Bank.h"
+	<fstream>
+	<sstream>
+	<iomanip>
+	<random>
+
+1733513131 c:\works_and_office\codeblock\banktask\bankingsoftcpp\bank.h
+	<iostream>
+	<string>
+	<vector>
+
+1733513314 source:c:\works_and_office\codeblock\banktask\bankingsoftcpp\main.cpp
+	"Bank.h"
+
