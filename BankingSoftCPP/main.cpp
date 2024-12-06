@@ -7,9 +7,12 @@ int main() {
     vector<Stock> stocks;
     int choice;
 
-    cout << "¬иберiть операцiю:\n";
+
+    cout << " ¬иберiть операцiю\n";
+    cout << "====================\n";
+
     cout << "1. «авантажити данi з файлу\n";
-    cout << "2. ¬вести данi вручну\n¬ведiть номер: ";
+    cout << "2. ¬вести данi вручну\n" << "====================\n" << "¬ведiть номер: ";
     cin >> choice;
 
     if (choice == 1) {
@@ -19,45 +22,62 @@ int main() {
         loadFromCSV(filename, clients);
          printBankState(clients);
     } else if (choice == 2) {
-        int numClients;
-        cout << "¬ведiть кiлькiсть клiЇнтiв дл€ додаванн€: ";
-        cin >> numClients;
+    int numClients;
+    cout << "\n====================\n";
+    cout << "¬ведiть кiлькiсть клiЇнтiв дл€ додаванн€: ";
+    cin >> numClients;
 
-        for (int i = 0; i < numClients; ++i) {
-            string name;
-            double balance;
-            cout << "¬ведiть iм'€ клiЇнта без пробiлiв: ";
-            cin >> name;
-            cout << "¬ведiть баланс клiЇнта: ";
-            cin >> balance;
-            Client client(name, balance);
+    // Ћ≥чильник кл≥Їнт≥в
+    int clientCount = 0;
 
-            int numDeposits;
-            cout << "¬ведiть кiлькiсть вкладiв: ";
-            cin >> numDeposits;
+    for (int i = 0; i < numClients; ++i) {
+        string name;
+        double balance;
+        cout << "\n====================\n";
+        cout << "\n¬ведiть iм'€ клiЇнта без пробiлiв: ";
+        cin >> name;
+        cout << "\n¬ведiть баланс клiЇнта: ";
+        cin >> balance;
+        Client client(name, balance);
 
-            for (int j = 0; j < numDeposits; ++j) {
-                Deposit deposit;
-                cout << "¬ведiть тип вкладу: ";
-                cin >> deposit.type;
-                cout << "¬ведiть суму вкладу: ";
-                cin >> deposit.amount;
-                cout << "¬ведiть процентну ставку: ";
-                cin >> deposit.interest_rate;
-                cout << "¬ведiть строк вкладу (в роках): ";
-                cin >> deposit.duration;
-                client.addDeposit(deposit);
-            }
+        int numDeposits;
+        cout << "\n¬ведiть кiлькiсть вкладiв: ";
+        cin >> numDeposits;
 
-            clients.push_back(client);
+        // Ћ≥чильник вклад≥в (ц≥нних папер≥в) дл€ кожного кл≥Їнта
+        int depositCount = 0;
+
+        for (int j = 0; j < numDeposits; ++j) {
+            Deposit deposit;
+            cout << "\n====================\n";
+            cout << "\n¬ведiть тип вкладу: ";
+            cin >> deposit.type;
+            cout << "\n¬ведiть суму вкладу: ";
+            cin >> deposit.amount;
+            cout << "\n¬ведiть процентну ставку: ";
+            cin >> deposit.interest_rate;
+            cout << "\n¬ведiть строк вкладу (в роках): ";
+            cin >> deposit.duration;
+            client.addDeposit(deposit);
+            depositCount++; // «б≥льшуЇмо л≥чильник вклад≥в
         }
-    } else {
-        cout << "Ќевiрний вибiр!" << endl;
-        return 1;
+
+        clients.push_back(client);
+        clientCount++; // «б≥льшуЇмо л≥чильник кл≥Їнт≥в
+        cout << " ≥льк≥сть вклад≥в дл€ цього кл≥Їнта: " << depositCount << endl;
     }
+
+    // ¬иведенн€ загальноњ к≥лькост≥ кл≥Їнт≥в
+    cout << "\n«агальна к≥льк≥сть кл≥Їнт≥в: " << clientCount << endl;
+} else {
+    cout << "\nЌевiрний вибiр!" << endl;
+    return 1;
+}
+
 
     // ƒодаванн€ ц≥нних папер≥в
     int numStocks;
+    cout << "\n====================\n";
     cout << "¬ведiть кiлькiсть цiнних паперiв: ";
     cin >> numStocks;
 
@@ -65,11 +85,11 @@ int main() {
         string name;
         double price;
         int quantity;
-        cout << "¬ведiть iм'€ цiнного паперу: ";
+        cout << "\n¬ведiть iм'€ цiнного паперу: ";
         cin >> name;
-        cout << "¬ведiть цiну: ";
+        cout << "\n¬ведiть цiну: ";
         cin >> price;
-        cout << "¬ведiть кiлькiсть: ";
+        cout << "\n¬ведiть кiлькiсть: ";
         cin >> quantity;
         stocks.push_back(Stock(name, price, quantity));
     }
@@ -80,7 +100,7 @@ int main() {
 
     // ќновленн€ ц≥н на ц≥нн≥ папери
     double percentIncrease;
-    cout << "¬ведiть вiдсоток збiльшенн€ цiн на цiннi папери: ";
+    cout << "\n¬ведiть вiдсоток збiльшенн€ цiн на цiннi папери: ";
     cin >> percentIncrease;
     updateStockPrices(stocks, percentIncrease);
 
