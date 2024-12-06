@@ -11,9 +11,9 @@
 	<string>
 	<vector>
 
-1733522876 source:c:\works_and_office\codeblock\banktask\bankingsoftcpp\main.cpp
+1733523358 source:c:\works_and_office\codeblock\banktask\bankingsoftcpp\main.cpp
 	<iostream>
-	<string>
-	<vector>
 	"Bank.h"
+	<locale>
+	<vector>
 
