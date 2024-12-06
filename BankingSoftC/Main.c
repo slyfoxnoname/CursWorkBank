@@ -56,7 +56,7 @@ int main() {
                 scanf("%lf", &price);
                 printf("\n¬ведiть кiлькiсть: ");
                 scanf("%d", &quantity);
-                printf("\n¬ведiть тип (наприклад, акцi€ або облiгацi€): ");
+                printf("\n¬ведiть тип (акцi€(Stock)/облiгацi€(Bond)): ");
                 scanf("%s", type);
                 add_security(&bank, name, price, quantity, type);
                 break;
@@ -105,7 +105,7 @@ int main() {
             case 9: {
                 char filename[50];
                 printf("\n====================\n");
-                printf("¬ведiть назву файлу дл€ завантаженн€: ");
+                printf("¬ведiть назву файлу: ");
                 scanf("%s", filename);
                 load_from_csv(&bank, filename);
                 print_bank_state(&bank);
