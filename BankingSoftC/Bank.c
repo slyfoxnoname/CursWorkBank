@@ -15,9 +15,11 @@ Bank init_bank(double initial_cash) {
 
 // Додавання нового клієнта до банку
 void add_client(Bank* bank, char* name, double initial_deposit, double deposit_rate, int duration) {
-    // "Виділення додаткової пам'яті для нового клієнта"
+    // Виділення додаткової пам'яті для нового клієнта
+
     bank->clients = realloc(bank->clients, (bank->client_count + 1) * sizeof(Client));
     // "Збереження інформації про клієнта"
+
     strcpy(bank->clients[bank->client_count].name, name);
     bank->clients[bank->client_count].balance = initial_deposit;
     bank->clients[bank->client_count].deposit_rate = deposit_rate;
@@ -51,10 +53,10 @@ void update_securities(Bank* bank) {
 void buy_security(Bank* bank, char* name, int quantity) {
     for (int i = 0; i < bank->security_count; i++) {
         if (strcmp(bank->securities[i].name, name) == 0 && bank->securities[i].quantity >= quantity) {
-            double cost = bank->securities[i].price * quantity;                                         // "Загальна вартість покупки"
+            double cost = bank->securities[i].price * quantity;      // "Загальна вартість покупки"
             if (bank->cash >= cost) {                               // "Перевірка, чи вистачає готівки"
-                bank->securities[i].quantity -= quantity;                                               // "Зменшення кількості доступних паперів"
-                bank->cash -= cost;                                     // "Зменшення готівки банку"
+                bank->securities[i].quantity -= quantity;            // "Зменшення кількості доступних паперів"
+                bank->cash -= cost;                               // "Зменшення готівки банку"
                 printf("\nБанк купив %d одиниць %s.\n", quantity, name);
                 return;
             }
