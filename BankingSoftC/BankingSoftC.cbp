@@ -38,9 +38,6 @@
 		<Unit filename="Main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Main_test.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
